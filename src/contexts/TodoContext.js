@@ -23,13 +23,21 @@ export const TodoProvider = ({ children }) => {
     item.completed = !item.completed;
 
     setTodos(cloned_todos);
-    }
+    };
+
+    const destroyTodo = (id) => {
+      const cloned_todos = [...todos];
+      const ItemIndex = cloned_todos.findIndex((todo) => todo.id === id);
+      cloned_todos.splice(ItemIndex,1);
+      setTodos(cloned_todos);
+    };
 
   const values = {
     todos,
     setTodos,
     addTodo,
     toggleTodo,
+    destroyTodo,
   };
 
 
