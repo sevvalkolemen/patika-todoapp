@@ -5,7 +5,7 @@ function ContentFooter() {
   const {todos,filter,setFilter,setTodos} = useTodo();
   const clearCompleted = () => {
     setTodos((prev) => prev.filter((todo) => !todo.completed));
-  } 
+  }  
   return (
     <footer className="footer">
       <span className="todo-count">
